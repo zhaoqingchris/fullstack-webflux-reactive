@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-8">
+    <p>
+      <button (click)="requestPortStream()">Reactive Request</button>
+      <button (click)="requestPortBlocking()">Blocking Request</button>
+    </p>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Port ID</th>
+        <th>Port Name</th>
+        <th>Port Location</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let port of ports | async" [class.success]="port === selectedPort" (click)="onSelect(port)">
+        <td>{{port.id}}</td>
+        <td>{{port.name}}</td>
+        <td>{{port.location}}</td>
+      <tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <div class="message">Click on a port for more details</div>
+    <app-port-detail [port]="selectedPort"></app-port-detail>
+  </div>
+</div>
