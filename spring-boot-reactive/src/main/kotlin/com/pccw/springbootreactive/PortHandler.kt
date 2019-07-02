@@ -31,7 +31,7 @@ class PortHandler(private val repository: PortRepository) {
         log.info("Reactive Call, current Thread {} at {}", Thread.currentThread().name, LocalDateTime.now())
 
         val ports = repository.findAll()
-        return ok().bodyToServerSentEvents(ports.delayElements(Duration.ofMillis(100)))
+        return ok().bodyToServerSentEvents(ports.delayElements(Duration.ofMillis(10)))
     }
 }
 

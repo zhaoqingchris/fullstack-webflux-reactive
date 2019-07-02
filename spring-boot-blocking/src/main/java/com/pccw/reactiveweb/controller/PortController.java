@@ -13,7 +13,7 @@ public class PortController {
 
     private static final Logger log = LoggerFactory.getLogger(PortController.class);
 
-    private static final int DELAY_PER_ITEM_MS = 100;
+    private static final int DELAY_PER_ITEM_MS = 10;
 
     private PortMongoBlockingRepository portMongoBlockingRepository;
 
